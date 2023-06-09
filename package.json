@@ -1,0 +1,43 @@
+{
+  "name": "watermark-vue3",
+  "private": false,
+  "version": "1.0.0",
+  "homepage": "https://github.com/isnl/watermark-vue3",
+  "keywords": [
+    "watermark",
+    "vue",
+    "vue-watermark",
+    "vue watermark",
+    "vue3",
+    "vue3-watermark",
+    "vue3 watermark"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isnl/watermark-vue3"
+  },
+  "scripts": {
+    "dev": "vite --force --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/watermark-vue3.umd.js",
+  "module": "lib/watermark-vue3.es.js",
+  "exports": {
+    "./lib/style.css": "./lib/style.css",
+    ".": {
+      "import": "./lib/watermark-vue3.es.js",
+      "require": "./lib/watermark-vue3.umd.js"
+    }
+  },
+  "dependencies": {
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.3",
+    "vite": "^2.9.9"
+  }
+}
