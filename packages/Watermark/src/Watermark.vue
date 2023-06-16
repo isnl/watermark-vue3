@@ -1,8 +1,5 @@
 <script setup lang="ts" name="Watermark">
-// 找到父元素判断是否有position
-// TODO: 多行水印对齐方式、zIndex
-// 方法: 更新、显示、隐藏、销毁、盲水印
-import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
+import { CSSProperties, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 
 interface Props {
 	options: {
@@ -30,6 +27,15 @@ const defaultOptions = {
 
 const props = defineProps<Props>();
 const wrapperRef = ref<HTMLElement | null>(null);
+
+const containerStyle: CSSProperties = {
+	position: 'absolute',
+	top: 0,
+	left: 0,
+	right: 0,
+	bottom: 0,
+	'pointer-events': 'none',
+};
 
 watch(
 	() => props.visible,
@@ -73,16 +79,5 @@ onBeforeUnmount(() => {
 });
 </script>
 <template>
-	<div class="watermark-container" ref="wrapperRef"></div>
+	<div class="watermark-container" :style="containerStyle" ref="wrapperRef"></div>
 </template>
-
-<style scoped>
-.watermark-container {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	pointer-events: none;
-}
-</style>

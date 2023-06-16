@@ -1,8 +1,9 @@
 <script setup>
+import { ref } from 'vue';
 const visible = ref(true);
 
 const options = {
-	text: ['免费ChatGPT', 'ChatGPTer', 'https://ai.iiter.cn'],
+	text: ['Watermark-vue3', 'vue3页面水印'],
 	fontSize: 14,
 	fontFamily: 'Microsoft YaHei',
 	color: 'rgba(0, 0, 0, 0.8)',
@@ -21,7 +22,7 @@ const options = {
 
 <style scoped>
 .wrapper {
-	width: 1200px;
+	width: 800px;
 	height: 400px;
 	margin: 100px auto;
 }
